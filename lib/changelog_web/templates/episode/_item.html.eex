@@ -56,7 +56,7 @@
 
         <span class="news_item-toolbar-meta-item">
         <%= for topic <- main_topics do %>
-          <%= link("##{topic.slug}", to: ~p"/topic/#{topic.slug}", title: "View #{topic.name}") %>
+          <%= link("##{topic.slug}", to: ~p"/topic/#{topic.slug}", title: "View #{topic.name}", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
         <% end %>
 
         <%= if Enum.any?(additional_topics) do %>
@@ -67,7 +67,7 @@
               <ul class="tooltip-list">
                 <%= for topic <- additional_topics do %>
                   <li>
-                    <%= link("##{topic.slug}", to: ~p"/topic/#{topic.slug}", title: "View #{topic.name}") %>
+                    <%= link("##{topic.slug}", to: ~p"/topic/#{topic.slug}", title: "View #{topic.name}", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
                   </li>
                 <% end %>
               </ul>
@@ -91,7 +91,7 @@
 
   <footer class="news_item-footer">
     <span class="news_item-footer-item">
-      <%= link("Discuss", to: ~p"/#{@episode.podcast.slug}/#{@episode.slug}/discuss") %>
+      <%= link("Discuss", to: ~p"/#{@episode.podcast.slug}/#{@episode.slug}/discuss", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
       &bull; <%= link("Share",
           title: "Share this episode",
           to: {:javascript, "void(0);"},

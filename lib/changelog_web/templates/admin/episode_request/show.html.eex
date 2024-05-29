@@ -1,10 +1,10 @@
 <div class="ui basic segment">
   <h1 class="ui dividing header">
-    <%= link("Podcasts", to: ~p"/admin/podcasts") %>
+    <%= link("Podcasts", to: ~p"/admin/podcasts", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     <%= render(PodcastView, "_dropdown_list.html", assigns) %>
-    <%= link(@podcast.name, to: ~p"/admin/podcasts/#{@podcast.slug}/episodes") %>
+    <%= link(@podcast.name, to: ~p"/admin/podcasts/#{@podcast.slug}/episodes", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     &raquo;
-    <%= link("Episode Requests", to: ~p"/admin/podcasts/#{@podcast.slug}/episode_requests") %>
+    <%= link("Episode Requests", to: ~p"/admin/podcasts/#{@podcast.slug}/episode_requests", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     &raquo;
     <%= @request.id %> <%= status_label(@request) %>
 
@@ -89,7 +89,7 @@
 
   <p>
   <%= if Policies.Admin.Person.show(@current_user, @request.submitter) do %>
-    <%= link(@request.submitter.name, to: ~p"/admin/people/#{@request.submitter}") %>
+    <%= link(@request.submitter.name, to: ~p"/admin/people/#{@request.submitter}", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
   <% else %>
     <%= @request.submitter.name %>
   <% end %>

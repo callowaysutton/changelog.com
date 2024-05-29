@@ -5,7 +5,7 @@
         <%= SharedHelpers.lazy_image(PersonView.avatar_url(@post.author), @post.author.name, width: 70, height: 70) %>
       <% end %>
 
-      <%= link("changelog.com/posts", to: ~p"/posts", title: "Changelog Posts") %>
+      <%= link("changelog.com/posts", to: ~p"/posts", title: "Changelog Posts", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     </p>
 
     <h2 class="news_item-title"><%= link(@post.title, to: ~p"/posts/#{@post.slug}") %></h2>
@@ -26,7 +26,7 @@
 
       <span class="news_item-toolbar-meta-item">
       <%= for topic <- main_topics do %>
-        <%= link("##{topic.slug}", to: ~p"/topic/#{topic.slug}", title: "View #{topic.name}") %>
+        <%= link("##{topic.slug}", to: ~p"/topic/#{topic.slug}", title: "View #{topic.name}", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
       <% end %>
 
       <%= if Enum.any?(additional_topics) do %>
@@ -37,7 +37,7 @@
             <ul class="tooltip-list">
               <%= for topic <- additional_topics do %>
                 <li>
-                  <%= link("##{topic.slug}", to: ~p"/topic/#{topic.slug}", title: "View #{topic.name}") %>
+                  <%= link("##{topic.slug}", to: ~p"/topic/#{topic.slug}", title: "View #{topic.name}", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
                 </li>
               <% end %>
             </ul>
@@ -56,9 +56,10 @@
 
   <footer class="news_item-footer">
     <span class="news_item-footer-item">
-      <%= link("Read On", to: ~p"/posts/#{@post.slug}") %> &bull;
+      <%= link("Read On", to: ~p"/posts/#{@post.slug}", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
+ &bull;
       <%= link("Discuss", to: ~p"/posts/#{@post.slug}" <> "#discussion") %>
-      &bull; <%= link("Share", to: ~p"/posts/#{@post.slug}", title: "Copy URL for easy sharing", data: [copy: true]) %>
+      &bull; <%= link("Share", to: ~p"/posts/#{@post.slug}", title: "Copy URL for easy sharing", data: [copy: true], "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     </span>
   </footer>
 

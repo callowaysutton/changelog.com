@@ -16,15 +16,13 @@
       </div>
       <div class="show-header-buttons">
         <%= link("Learn More",
-            title: "Learn More about #{@podcast.name}",
-            to: ~p"/#{@podcast.slug}",
+            title: "Learn More about #{@podcast.name}", to: ~p"/#{@podcast.slug}",
             role: "button",
-            class: "show-header-buttons-item button_small") %>
+            class: "show-header-buttons-item button_small", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
         <%= link("Subscribe",
-            title: "Subscribe to #{@podcast.name}",
-            to: ~p"/#{@podcast.slug}",
+            title: "Subscribe to #{@podcast.name}", to: ~p"/#{@podcast.slug}",
             role: "button",
-            class: "show-header-buttons-item button_small") %>
+            class: "show-header-buttons-item button_small", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
       </div>
     </div>
   </div>

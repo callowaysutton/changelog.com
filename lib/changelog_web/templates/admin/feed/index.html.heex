@@ -5,7 +5,7 @@
   </h1>
 
   <div class="actions">
-    <%= link to: ~p"/admin/feeds/new", class: "ui right floated primary basic button" do %>
+    <%= link to: ~p"/admin/feeds/new", class: "ui right floated primary basic button", "up-target": ".main-target", "up-instant": true, "up-preload": true do %>
       <i class="add layout icon"></i>
       Add Feed
     <% end %>

@@ -1,6 +1,6 @@
 <div class="ui basic segment">
   <h1 class="ui dividing header">
-    <%= link("Podcasts", to: ~p"/admin/podcasts") %>
+    <%= link("Podcasts", to: ~p"/admin/podcasts", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     <%= render(PodcastView, "_dropdown_list.html", assigns) %>
     <%= link @episode.podcast.name, to: ~p"/admin/podcasts/#{@episode.podcast.slug}/episodes" %>
     &raquo;
@@ -10,18 +10,16 @@
     <%= if @episode.published do %>
       <input type="hidden" value="<%= Changelog.Buffer.Content.episode_text(@item) %>">
       <button class="ui icon button clipboard" title="Copy Share Text"><i class="share icon"></i></button>
-      <%= link("View Public",
-        to: ~p"/#{@podcast.slug}/#{@episode.slug}",
+      <%= link("View Public", to: ~p"/#{@podcast.slug}/#{@episode.slug}",
         rel: "external",
-        class: "ui button") %>
+        class: "ui button", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     <% else %>
-      <%= link("Preview",
-        to: ~p"/#{@podcast.slug}/#{@episode.slug}/preview",
+      <%= link("Preview", to: ~p"/#{@podcast.slug}/#{@episode.slug}/preview",
         rel: "external",
-        class: "ui button") %>
+        class: "ui button", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     <% end %>
     <%= if @item do %>
-      <%= link("News Item", to: ~p"/admin/news/items/#{@item}/edit", class: "ui button") %>
+      <%= link("News Item", to: ~p"/admin/news/items/#{@item}/edit", class: "ui button", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     <% end %>
     </div>
 

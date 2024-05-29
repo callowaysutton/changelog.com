@@ -20,7 +20,7 @@
     <%= render_many(@page, EpisodeView, "_item.html") %>
 
     <nav class="load_more" aria-label="Pagination">
-      <%= link("View All", to: ~p"/master", class: "load_more-button") %>
+      <%= link("View All", to: ~p"/master", class: "load_more-button", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     </nav>
   <% end %>
   </div>

@@ -29,8 +29,8 @@ defmodule ChangelogWeb.Meta.Feeds do
 
   defp shared do
     [
-      %{url: url(~p"/feed"), title: "Combined Feed (Pods + Posts)"},
-      %{url: url(~p"/master/feed"), title: "Master Feed (All Pods)"}
+      %{url: url(~p"/feed"), title: "Combined Feed (Pods + Posts)", "up-target": ".main-target", "up-instant": true, "up-preload": true},
+      %{url: url(~p"/master/feed"), title: "Master Feed (All Pods)", "up-target": ".main-target", "up-instant": true, "up-preload": true}
     ]
   end
 end

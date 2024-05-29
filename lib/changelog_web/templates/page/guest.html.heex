@@ -88,7 +88,8 @@
       <%= if @podcast.slug == "gotime" do %>
         the <%= link("Gophers Slack", to: "https://gophers.slack.com/messages/gotimefm") %>
       <% else %>
-        our <%= link("Community Slack", to: ~p"/community") %>.
+        our <%= link("Community Slack", to: ~p"/community", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
+.
       <% end %>
       </li>
     <% else %>

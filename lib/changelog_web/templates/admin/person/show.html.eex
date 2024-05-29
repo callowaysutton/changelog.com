@@ -2,14 +2,13 @@
 
 <div class="ui basic segment">
   <h1 class="ui dividing header">
-    <%= link("People", to: ~p"/admin/people") %>
+    <%= link("People", to: ~p"/admin/people", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     &raquo;
     <%= @person.name %> (<%= @person.handle %>)
     <div class="ui basic right floated buttons">
-      <%= link("View Public",
-            to: ~p"/person/#{@person.handle}",
+      <%= link("View Public", to: ~p"/person/#{@person.handle}",
             rel: "external",
-            class: "ui button") %>
+            class: "ui button", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     </div>
     <div class="sub header">
       created: <%= AdminHelpers.ts(@person.inserted_at) %>
@@ -44,7 +43,8 @@
 
 <%= if Enum.any?(@published) do %>
 <div class="ui basic segment">
-  <h2 class="ui header">Recent news <%= link("(view all)", to: ~p"/admin/people/#{@person}/news") %></h2>
+  <h2 class="ui header">Recent news <%= link("(view all)", to: ~p"/admin/people/#{@person}/news", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
+</h2>
   <%= render(NewsItemView, "_table.html", Map.merge(assigns, %{status: :published, items: @published})) %>
 </div>
 <% end %>
@@ -72,7 +72,8 @@
 
 <%= if Enum.any?(@comments) do %>
 <div class="ui basic segment">
-  <h2 class="ui header">Recent comments <%= link("(view all)", to: ~p"/admin/people/#{@person}/comments") %></h2>
+  <h2 class="ui header">Recent comments <%= link("(view all)", to: ~p"/admin/people/#{@person}/comments", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
+</h2>
   <%= render(NewsItemCommentView, "_table.html", Map.merge(assigns, %{comments: @comments})) %>
 </div>
 <% end %>

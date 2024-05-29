@@ -54,9 +54,8 @@
       <% end %>
       <%= if episode.episode_request do %>
         &nbsp;&nbsp;
-        <%= link("Requested",
-          to: ~p"/admin/podcasts/#{podcast.slug}/episode_requests/#{episode.episode_request}",
-          class: "ui tiny green basic icon label") %>
+        <%= link("Requested", to: ~p"/admin/podcasts/#{podcast.slug}/episode_requests/#{episode.episode_request}",
+          class: "ui tiny green basic icon label", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
       <% end %>
       </td>
       <td>

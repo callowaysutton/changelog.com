@@ -19,10 +19,10 @@
     <%= if @podcast.twitter_handle do %>
       <li><%= link("Twitter", to: SharedHelpers.twitter_url(@podcast.twitter_handle)) %></li>
     <% end %>
-      <li><%= link("Email", to: ~p"/subscribe/#{@podcast.slug}", title: "Subscribe via Email") %></li>
+      <li><%= link("Email", to: ~p"/subscribe/#{@podcast.slug}", title: "Subscribe via Email", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
     </ul>
     <div class="tooltip-footer">
-      <%= link("Request Episode", to: ~p"/request/#{@podcast.slug}") %>
+      <%= link("Request Episode", to: ~p"/request/#{@podcast.slug}", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     </div>
   </div>
 </div>

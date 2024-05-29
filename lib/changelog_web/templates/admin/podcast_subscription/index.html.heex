@@ -1,8 +1,8 @@
 <div class="ui basic segment">
   <h1 class="ui dividing header">
-    <%= link("Podcasts", to: ~p"/admin/podcasts") %>
+    <%= link("Podcasts", to: ~p"/admin/podcasts", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     &raquo;
-    <%= link(@podcast.name, to: ~p"/admin/podcasts/#{@podcast.slug}/episodes") %>
+    <%= link(@podcast.name, to: ~p"/admin/podcasts/#{@podcast.slug}/episodes", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
     &raquo;
     Subscriptions
     <%= link("(View Public)", to: ~p"/#{@podcast.slug}", class: "view") %>

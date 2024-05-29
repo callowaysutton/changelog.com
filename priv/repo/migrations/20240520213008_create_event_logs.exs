@@ -1,3 +1,4 @@
+mix ecto.setup
 defmodule Changelog.Repo.Migrations.CreateEventLogs do
   use Ecto.Migration
 

@@ -26,7 +26,9 @@
     <%= render_many(@page, EpisodeView, "_item.html") %>
     <%= render(SharedView, "_more_button.html", assigns) %>
   <% else %>
-    <p class="feed-note">Nothing to see here. <%= link("Submit", to: ~p"/news/submit") %> some news or <%= link("request", to: ~p"/request/new") %> an episode.</p>
+    <p class="feed-note">Nothing to see here. <%= link("Submit", to: ~p"/news/submit", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
+ some news or <%= link("request", to: ~p"/request/new", "up-target": ".main-target", "up-instant": true, "up-preload": true) %>
+ an episode.</p>
   <% end %>
   </div>
 </div>

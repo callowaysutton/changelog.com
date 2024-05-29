@@ -48,7 +48,7 @@
   </nav>
   <nav class="footer-nav">
     <div class="footer-nav-list">
-      <h4><%= link("Podcasts", to: ~p"/podcasts", title: "View all podcasts") %></h4>
+      <h4><%= link("Podcasts", to: ~p"/podcasts", title: "View all podcasts", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></h4>
       <ul>
       <%= for podcast <- ChangelogWeb.PodcastView.active_podcasts_for_index(@podcasts) do %>
         <li><%= link(podcast.name, to: ~p"/#{podcast.slug}", title: podcast.name) %></li>
@@ -75,23 +75,23 @@
       <h4>Community</h4>
       <ul>
         <li><%= link("Merch Shop", to: "https://merch.changelog.com", title: "Changelog's Merch Shop") %></li>
-        <li><%= link("Join the Community", to: ~p"/community", title: "Join the community") %></li>
-        <li><%= link("Code of Conduct", to: ~p"/coc", title: "Read the code of conduct") %></li>
+        <li><%= link("Join the Community", to: ~p"/community", title: "Join the community", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
+        <li><%= link("Code of Conduct", to: ~p"/coc", title: "Read the code of conduct", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
         <li><%= link("Sign in to Slack", to: "https://changelog.slack.com", title: "Sign in to Slack") %></li>
         <li>---</li>
-        <li><%= link("Request Episode", to: ~p"/request", title: "Request an episode") %></li>
-        <li><%= link("Submit News", to: ~p"/news/submit", title: "Submit news") %></li>
+        <li><%= link("Request Episode", to: ~p"/request", title: "Request an episode", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
+        <li><%= link("Submit News", to: ~p"/news/submit", title: "Submit news", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
       </ul>
     </div>
     <div class="footer-nav-list">
       <h4>Etc.</h4>
       <ul>
-        <li><%= link("Beats", to: ~p"/beats", title: "Changelog Beats") %></li>
-        <li><%= link("Posts", to: ~p"/posts", title: "Changelog Posts") %></li>
-        <li><%= link("Changelog Nightly", to: ~p"/nightly", title: "Changelog Nightly") %></li>
-        <li><%= link("Sponsor", to: ~p"/sponsor", title: "Sponsor Changelog") %></li>
-        <li><%= link("Search", to: ~p"/search", title: "Search Changelog") %></li>
-        <li><%= link("Guest Guide", to: ~p"/guest", title: "Changelog Guest Guide") %></li>
+        <li><%= link("Beats", to: ~p"/beats", title: "Changelog Beats", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
+        <li><%= link("Posts", to: ~p"/posts", title: "Changelog Posts", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
+        <li><%= link("Changelog Nightly", to: ~p"/nightly", title: "Changelog Nightly", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
+        <li><%= link("Sponsor", to: ~p"/sponsor", title: "Sponsor Changelog", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
+        <li><%= link("Search", to: ~p"/search", title: "Search Changelog", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
+        <li><%= link("Guest Guide", to: ~p"/guest", title: "Changelog Guest Guide", "up-target": ".main-target", "up-instant": true, "up-preload": true) %></li>
         <li><a href="https://github.com/thechangelog/changelog.com" title="Changelog.com source code">View Source</a></li>
         <li>---</li>
         <li><a href="https://github.com/thechangelog/changelog.com/issues/new" title="Report a Changelog.com issue">Report an Issue</a></li>
